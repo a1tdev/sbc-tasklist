@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Task Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- Header -->
+      <header class="header">
+        <input type="search" placeholder="Search tasks..." class="search-bar" />
+        <div class="user-avatar">
+          <p>B</p>
+        </div>
+      </header>
+
+      <!-- Mobile Nav -->
+      <nav class="mob-nav" aria-label="Mobile navigation">
+        <div class="toggle-container">
+          <button class="toggler" id="toggler">
+            <span class="visually-hidden">Toggle Menu</span>
+          </button>
+        </div>
+
+        <ul class="flex-container" id="mob-nav-ul">
+          <li><a href="#">Dashboard</a></li>
+          <li>
+            <a href="#" class="tasks-navlink">Tasks</a>
+          </li>
+          <li>
+            <a href="#" class="completed-navlink">Completed</a>
+          </li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav aria-label="Desktop navigation">
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li>
+              <a href="#" class="tasks-navlink">Tasks</a>
+            </li>
+            <li>
+              <a href="#" class="completed-navlink">Completed</a>
+            </li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="flex-container page-container">
+          <h1>Task List</h1>
+          <!-- Add task -->
+          <button class="main-addtask-btn">Add Task</button>
+        </div>
+
+        <div class="task-table-display page-container">
+          <table class="task-table">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Task</th>
+                <th>Date Created</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Example rows -->
+              <tr class="table-row">
+                <td>Incomplete</td>
+                <td>Complete user dashboard</td>
+                <td>23/09/2024</td>
+                <td>
+                  <button class="complete-btn">
+                    <img
+                      src="./assets/images/Check.svg"
+                      alt="complete button icon"
+                    />
+                  </button>
+                  <button class="edit-btn">
+                    <img
+                      src="./assets/images/Edit.svg"
+                      alt="edit button icon"
+                    />
+                  </button>
+                  <button class="delete-btn">
+                    <img
+                      src="./assets/images/Trash.svg"
+                      alt="delete button icon"
+                    />
+                  </button>
+                </td>
+              </tr>
+              <tr class="table-row">
+                <td>Incomplete</td>
+                <td>Fix sidebar layout issues</td>
+                <td>22/09/2024</td>
+                <td>
+                  <button class="complete-btn">
+                    <img
+                      src="./assets/images/Check.svg"
+                      alt="complete button icon"
+                    />
+                  </button>
+                  <button class="edit-btn">
+                    <img src="./assets/images/Edit.svg" alt="" />
+                  </button>
+                  <button class="delete-btn">
+                    <img src="./assets/images/Trash.svg" alt="" />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Model Window -->
+        <section class="model-window">
+          <h2>Task</h2>
+          <textarea
+            id="taskTextArea"
+            maxlength="500"
+            placeholder="Add your task here"
+            required
+          ></textarea>
+
+          <button class="model-addtask-btn">Add Task</button>
+
+          <button class="save-btn hide-element" id="save-btn">Save Task</button>
+
+          <!-- Close Window -->
+          <button class="close-window-btn">X</button>
+        </section>
+
+        <!-- Completed Tasks -->
+        <section
+          class="page-container"
+          id="completed-tasks"
+          style="display: none"
+        >
+          <!-- Completed tasks loaded here -->
+          <table class="completed-task-table">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Task</th>
+                <th>Date Created</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="completed-table-body">
+              <!-- Example rows -->
+              <tr class="table-row">
+                <td>Completed</td>
+                <td>Complete user dashboard</td>
+                <td>23/09/2024</td>
+                <td class="actionrow-width">
+                  <button class="delete-btn">
+                    <img
+                      src="./assets/images/Trash.svg"
+                      alt="delete button icon"
+                    />
+                  </button>
+                </td>
+              </tr>
+              <tr class="completed-table-row">
+                <td>Completed</td>
+                <td>Fix sidebar layout issues</td>
+                <td>22/09/2024</td>
+                <td class="actionrow-width">
+                  <button class="delete-btn">
+                    <img
+                      src="./assets/images/Trash.svg"
+                      alt="delete button icon"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script defer src="./script.js"></script>
+  </body>
+</html>

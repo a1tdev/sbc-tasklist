@@ -1,0 +1,590 @@
+/* ========================================================================
+   ROOT CONFIGURATION  
+   ======================================================================== */
+
+:root {
+  /* Primary Palette */
+  --clr-primary: #07424a;
+  --clr-secondary: rgb(156, 215, 232);
+  --clr-neutral-100: rgb(250, 250, 250);
+
+  /* Button Palette */
+  --clr-primary-btn: rgba(115, 222, 188, 1);
+  --clr-secondary-btn: rgba(254, 172, 24, 1);
+  --clr-tertiary-btn: rgba(216, 17, 89, 1);
+
+  /* Family */
+  --ff-heading: "teachers", serif;
+  --ff-body: "teachers", sans-serif;
+  --ff-nav: "teachers", sans-serif;
+
+  /* Weight */
+  --fw-heading: 600;
+  --fw-body: 100;
+  --fw-nav: 500;
+  --fw-link: 400;
+  --fw-form-btn: 600;
+  --fw-form-label: 500;
+
+  /* Size */
+  --fs-h1: 4.2rem;
+  --fs-h2: 4rem;
+  --fs-h3: 3.2rem;
+  --fs-h4: 3rem;
+  --fs-h5: 2.8rem;
+  --fs-body-200: 1.5rem;
+  --fs-body-300: 1.6rem;
+  --fs-body-400: 1.7rem;
+  --fs-body-500: 2.25rem;
+  --fs-body-600: 2.5rem;
+  --fs-body-700: 3rem;
+  --fs-body-800: 2rem;
+  --fs-nav: 2rem;
+  --fs-link: var(--fs-body-400);
+  --fs-form-btn: 1.6rem;
+
+  /* Font Color */
+  --primary-font-clr: var(--clr-neutral-100);
+  --secondary-font-clr: var(--clr-primary);
+}
+/* Queries */
+@media (min-width: 40.06em) {
+  :root {
+    --fs-h1: 6.2rem;
+    --fs-h2: 4.8rem;
+    --fs-h3: 3.2rem;
+  }
+}
+@media (min-width: 70.31em) {
+  :root {
+    --fs-h1: 6.4rem;
+    --fs-h2: 4.8rem;
+    --fs-h3: 3.2rem;
+  }
+}
+
+/* ========================================================================
+     MAIN TEXT STYLES 
+     ======================================================================== */
+body {
+  background-color: var(--clr-neutral-100);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-heading);
+  color: var(--secondary-font-clr);
+  line-height: 1.2;
+  margin: 0;
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
+}
+h5 {
+  font-size: var(--fs-h5);
+}
+p {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  font-size: var(--fs-body-400);
+  color: var(--primary-font-clr);
+}
+a,
+li {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  font-size: var(--fs-body-400);
+  color: var(--primary-font-clr);
+}
+th {
+  font-weight: var(--fw-body);
+}
+
+/* ========================================================================
+     PAGE & SPACING (UTILITY) STYLES  
+     ======================================================================== */
+
+.page-container {
+  --max-width: 1200px;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+/* Padding Top & Bottom */
+.ptb-3 {
+  padding: 3rem 0;
+}
+.ptb-5 {
+  padding: 5rem 0;
+}
+
+.ptb-7 {
+  padding: 7rem 0;
+}
+.ptb-8 {
+  padding: 8rem 0;
+}
+.ptb-10 {
+  padding: 10rem 0;
+}
+.ptb-12 {
+  padding: 12rem 0;
+}
+
+/* Padding Bottom */
+.pb-3 {
+  padding-bottom: 3rem;
+}
+.pb-5 {
+  padding-bottom: 5rem;
+}
+.pb-7 {
+  padding-bottom: 7rem;
+}
+.pb-8 {
+  padding-bottom: 8rem;
+}
+.pb-9 {
+  padding-bottom: 9rem;
+}
+.pb-10 {
+  padding-bottom: 10rem;
+}
+.pb-12 {
+  padding-bottom: 12rem;
+}
+.pb-20 {
+  padding-bottom: 20rem;
+}
+/* Padding Top */
+.pt-3 {
+  padding-top: 3rem;
+}
+.pt-7 {
+  padding-top: 7rem;
+}
+.pt-10 {
+  padding-top: 10rem;
+}
+.pt-12 {
+  padding-top: 12rem;
+}
+
+/* Line Spacer */
+.line-spacer {
+  border-top: 1px solid rgba(255, 255, 255, 0.353);
+}
+
+.header-spacer {
+  border-top: 1px solid rgba(255, 255, 255, 0.353);
+}
+
+/* =========================================================
+     MEDIA QUERIES - PAGE CONTAINER & SPACING 
+     ========================================================= */
+
+@media (min-width: 46em) {
+  .page-container {
+    width: min(var(--max-width), 100% - (var(--padding) * 9));
+  }
+}
+
+@media (min-width: 64em) {
+  .page-container {
+    width: min(var(--max-width), 100% - (var(--padding) * 12));
+  }
+}
+
+/* ========================================================================
+     NAVIGATION MENU / HEADER STYLES   
+     ======================================================================== */
+
+/* Header */
+.header {
+  grid-area: header;
+  background-color: var(--clr-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+.search-bar {
+  padding: 10px;
+  font-size: var(--fs-body-300);
+  width: 60%;
+  border: none;
+  border-radius: 10px;
+}
+
+.user-avatar {
+  background-color: var(--clr-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+}
+.user-avatar > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--fs-body-700);
+}
+
+/* Mobile Navigation */
+.mob-nav * {
+  list-style: none;
+  text-decoration: none;
+}
+.mob-nav {
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-100);
+  padding: 35px 0;
+  width: 100%;
+  text-align: center;
+  height: 60px;
+  position: relative;
+}
+.mob-nav ul {
+  flex-direction: column;
+  background-color: var(--clr-primary);
+  width: 100%;
+  padding: 25px 0;
+}
+.mob-nav li {
+  padding: 1.5rem;
+}
+#mob-nav-ul {
+  display: none;
+}
+.mob-nav button {
+  border: none;
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-nav);
+  background-color: transparent;
+}
+
+/* Hide hamburger toggle text / kept in html for screen reader*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.toggler {
+  background-image: url("/assets/images/burger-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid var(--clr-primary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.toggle-container {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.toggle-container:hover {
+  border: 1px solid var(--clr-secondary);
+}
+.mob-nav a:hover {
+  color: red;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-100);
+  padding: 20px;
+  display: none;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 25px;
+}
+
+.sidebar nav ul li a {
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+}
+
+.sidebar nav ul li a:hover {
+  text-decoration: underline;
+  color: var(--clr-secondary);
+}
+
+/* ========================================================================
+     HOME PAGE STYLES  
+     ======================================================================== */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body-400);
+  font-weight: var(--fw-body);
+  background-color: var(--clr-neutral-100);
+}
+@media (min-width: 46em) {
+  body {
+    font-size: var(--fs-body-300);
+  }
+}
+
+.main-content {
+  grid-area: main;
+  background-color: var(--clr-neutral-100);
+  overflow-y: auto;
+}
+
+/* Title / Add Task / Status */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 2.5rem 0;
+}
+.add-task-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--clr-neutral-100);
+  font-size: var(--fs-body-800);
+  cursor: pointer;
+}
+.add-task-btn:hover {
+  background-color: var(--clr-secondary);
+}
+
+.task-table,
+.completed-task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.task-table thead,
+.completed-task-table thead {
+  background-color: #f4f4f4;
+}
+
+.task-table th,
+.task-table td,
+.completed-task-table th,
+.completed-task-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.task-table th,
+.completed-task-table th {
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-100);
+}
+
+.complete-btn {
+  background-color: var(--clr-primary-btn);
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary-btn);
+  font-weight: 600;
+  margin-right: 1.5rem;
+}
+
+.complete-btn:hover {
+  background-color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+}
+.main-addtask-btn {
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-100);
+  border: 1px solid var(--clr-primary);
+  font-weight: 600;
+}
+.main-addtask-btn:hover {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+}
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.edit-btn,
+.delete-btn,
+.complete-btn {
+  border-radius: 50%;
+}
+.edit-btn {
+  background-color: var(--clr-secondary-btn);
+  border: 1px solid var(--clr-secondary-btn);
+  margin-right: 1.5rem;
+}
+.edit-btn:hover {
+  background-color: rgb(236, 163, 26);
+}
+.delete-btn {
+  background-color: var(--clr-tertiary-btn);
+  border: 1px solid var(--clr-tertiary-btn);
+}
+.delete-btn:hover {
+  background-color: rgb(155, 13, 65);
+}
+
+button > img {
+  pointer-events: none;
+}
+
+td {
+  vertical-align: middle;
+  height: auto;
+}
+
+button {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img {
+  min-width: 25px;
+  flex-shrink: 0;
+}
+
+td:nth-of-type(3) {
+  text-wrap: nowrap;
+}
+td:nth-of-type(2) {
+  min-width: 25rem;
+}
+td:nth-of-type(4) {
+  width: 22rem;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+.complete-btn,
+.edit-btn,
+.delete-btn {
+  display: inline;
+}
+.actionrow-width {
+  width: unset;
+}
+
+/* =========================================================
+   MEDIA QUERIES - HOME PAGE (MAIN CONTENT)
+   ========================================================= */
+@media screen and (min-width: 64em) {
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main";
+    height: 100vh;
+  }
+  .sidebar {
+    display: block;
+  }
+  .mob-nav {
+    display: none;
+  }
+}
+
+/* ========================================================================
+   MODEL WINDOW STYLES 
+   ======================================================================== */
+
+.model-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 82%;
+  height: 82%;
+  background-color: var(--clr-primary);
+  border: 6px solid #042024;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  display: none;
+}
+.model-window h2 {
+  color: var(--clr-neutral-100);
+}
+textarea {
+  width: 70%;
+  padding: 0.5rem;
+}
+
+.model-addtask-btn,
+.save-btn {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--clr-primary-btn);
+  border: 1px solid var(--clr-primary);
+}
+.model-addtask-btn:hover,
+.save-btn:hover {
+  background-color: var(--clr-neutral-100);
+  border: 1px solid var(--clr-primary);
+}
+
+.hide-element {
+  display: none;
+}
+
+.close-window-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  background-color: var(--clr-primary-btn);
+  cursor: pointer;
+  border: none;
+}
+.close-window-btn:hover {
+  background-color: var(--clr-neutral-100);
+}
