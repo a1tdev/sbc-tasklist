@@ -504,6 +504,7 @@ td:nth-of-type(4) {
 .edit-btn,
 .delete-btn {
   display: inline;
+  padding: 14px;
 }
 .actionrow-width {
   width: unset;
