@@ -1,0 +1,11 @@
+# Ignore other OS-specific or IDE files
+._*
+.DS_Store
+.fseventsd
+.Spotlight-V100
+.idea/
+
+# Visual Studio
+.vscode/
+.history/
+*.code-workspace
