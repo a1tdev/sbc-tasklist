@@ -204,7 +204,7 @@ tableBodyEl.addEventListener("click", function (event) {
     let clickedBtnEl = event.target; // The button that was clicked
     let parentTrEl = clickedBtnEl.closest("tr"); // Find the closest <tr>
     // Get a specific <td> by its index (e.g., 1 for the second <td>)
-    let taskTdEl = parentTrEl.children[1].textContent; // Adjust the index as needed
+    let taskTdEl = parentTrEl.children[1].textContent;
 
     let completedDate = getTodaysDate();
 
@@ -234,7 +234,7 @@ mainEl.addEventListener("click", function (event) {
     let clickedBtnEl = event.target; // The button that was clicked
     let parentTrEl = clickedBtnEl.closest("tr"); // Find the closest <tr>
     parentTrEl.children[1].setAttribute("data-task-id", "row-edit");
-    let taskTdEl = parentTrEl.children[1].textContent; // Adjust the index as needed
+    let taskTdEl = parentTrEl.children[1].textContent;
 
     saveEditBtnEl.classList.replace("hide-element", "save-btn");
     modelAddTaskBtnEl.classList.add("hide-element");
@@ -300,11 +300,17 @@ mainEl.addEventListener("click", function (event) {
 searchEl.addEventListener("input", function (event) {
   let searchSt = event.target.value.toLowerCase().trim();
 
+  // Get updated list of task elements each time the search input changes
+  let allTaskDataEl = document.querySelectorAll("tr td:nth-child(2)");
+
   allTaskDataEl.forEach((taskEl) => {
     let taskText = taskEl.innerHTML.toLowerCase();
     let parentTrEl = taskEl.closest("tr");
-    parentTrEl.style.display = taskText.includes(searchSt)
-      ? "table-row"
-      : "none";
+
+    if (parentTrEl) {
+      parentTrEl.style.display = taskText.includes(searchSt)
+        ? "table-row"
+        : "none";
+    }
   });
 });
